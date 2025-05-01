@@ -1,0 +1,35 @@
+public class Sorting1 {
+    public static void main() {
+        Integer[] arr = new Integer[]{5, 3, 8, 1, 2};
+        Integer n = arr.size();
+
+        // Bubble Sort
+        for (Integer i = 0; i < n - 1; i++) {
+            for (Integer j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    Integer temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        System.debug('Sorted Array: ' + arr);
+
+        // Minimum and Maximum from sorted array
+        Integer min = arr[0];
+        Integer max = arr[n - 1];
+
+        // Average Calculation
+        Integer sum = 0;
+        for (Integer val : arr) {
+            sum += val;
+        }
+        Decimal average = (Decimal)sum / n;
+
+        // Output all results
+        System.debug('Minimum Value: ' + min);
+        System.debug('Maximum Value: ' + max);
+        System.debug('Average Value: ' + average);
+    }
+}
